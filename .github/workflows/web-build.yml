@@ -13,13 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
         with:
-          node-version: '14'
-
-      - name: Install dependencies
-        run: npm install
+          flutter-version: '3.19.3'
 
       - run: echo "$ENV_BASE64" | base64 -d > .env
         env: 
