@@ -21,9 +21,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - run: echo $ENV_BASE64 | base64 -d > .env
+      - run: echo "$ENV_BASE64" | base64 -d > .env
         env: 
-          ENV_BASE64: ${{secrets.ENV_BASE64}}
+          ENV_BASE64: ${{ secrets.ENV_BASE64 }}
 
       - run: flutter pub get
 
