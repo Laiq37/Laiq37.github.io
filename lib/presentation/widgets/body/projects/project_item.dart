@@ -36,7 +36,7 @@ class ProjectItem extends StatelessWidget {
               project.description,
               style: AppStyles.s18,
               minFontSize: 12,
-              maxLines: 4,
+              maxLines: 6,
             ),
           ),
           const SizedBox(height: 8),

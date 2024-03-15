@@ -11,9 +11,9 @@ class IntroImage extends StatelessWidget {
   Widget build(BuildContext context) {
     final responsiveSize = ResponsiveSize(
       deviceWidth: context.width,
-      mobileSize: context.width * .55,
-      ipadSize: context.width * .36,
-      smallScreenSize: context.width * .26,
+      mobileSize: context.width * .6,
+      ipadSize: context.width * .4,
+      smallScreenSize: context.width * .3,
     );
 
     return Positioned(

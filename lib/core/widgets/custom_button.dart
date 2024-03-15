@@ -11,6 +11,7 @@ class CustomButton extends StatelessWidget {
     required this.label,
     this.icon,
     this.backgroundColor,
+    this.child,
     this.borderColor,
     this.onPressed,
     this.width,
@@ -22,6 +23,7 @@ class CustomButton extends StatelessWidget {
   final double? height;
   final IconData? icon;
   final String label;
+  final Widget? child;
   final double? width;
 
   @override
@@ -35,28 +37,29 @@ class CustomButton extends StatelessWidget {
           side: borderColor == null ? null : BorderSide(color: borderColor!),
           backgroundColor: backgroundColor,
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Flexible(
-              child: AutoSizeText(
-                label,
-                style: AppStyles.s16,
-                textAlign: TextAlign.center,
-                minFontSize: 8,
-                maxLines: 1,
-              ),
+        child: child ??
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Flexible(
+                  child: AutoSizeText(
+                    label,
+                    style: AppStyles.s16,
+                    textAlign: TextAlign.center,
+                    minFontSize: 8,
+                    maxLines: 1,
+                  ),
+                ),
+                if (icon != null) ...[
+                  const SizedBox(width: 5),
+                  Icon(
+                    icon,
+                    size: 18,
+                    color: AppColors.white,
+                  ),
+                ]
+              ],
             ),
-            if (icon != null) ...[
-              const SizedBox(width: 5),
-              Icon(
-                icon,
-                size: 18,
-                color: AppColors.white,
-              ),
-            ]
-          ],
-        ),
       ),
     );
   }

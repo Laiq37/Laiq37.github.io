@@ -1,11 +1,11 @@
 {
-    "name": "Rady Haggag",
-    "short_name": "Rady Haggag",
+    "name": "Syed Laiq Afzal",
+    "short_name": "Syed Laiq Afzal",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Portfolio Web-App.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

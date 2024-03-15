@@ -14,10 +14,10 @@ class ProjectsGrid extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: _getCrossAxisCount(context.width),
-        crossAxisSpacing: 16,
-        mainAxisSpacing: 16,
-      ),
+          crossAxisCount: _getCrossAxisCount(context.width),
+          crossAxisSpacing: 16,
+          mainAxisSpacing: 16,
+          mainAxisExtent: 450),
       itemBuilder: (context, index) {
         return ProjectItem(
           project: AppConstants.projects[index],

@@ -1,4 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:portfolio/data/models/contact_info.dart';
+import 'package:portfolio/data/repositories/contact_repository.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_enums.dart';
@@ -19,6 +23,7 @@ class _ContactFormState extends State<ContactForm> {
   late TextEditingController _messageController;
   late TextEditingController _nameController;
   late TextEditingController _subjectController;
+  final ValueNotifier<bool> isLoadingNotifier = ValueNotifier(false);
 
   @override
   void initState() {
@@ -51,11 +56,20 @@ class _ContactFormState extends State<ContactForm> {
             TextFormField(
               controller: _nameController,
               style: AppStyles.s14,
+              validator: (value) {
+                if (value!.trim().isEmpty) return "Please Enter your name";
+                return null;
+              },
               decoration: const InputDecoration(labelText: 'Name'),
             ),
             const SizedBox(height: 12),
             TextFormField(
               controller: _emailController,
+              validator: (value) {
+                if (value!.trim().isEmpty || !value.isValidEmail())
+                  return "Please enter a valid email";
+                return null;
+              },
               style: AppStyles.s14,
               decoration: const InputDecoration(labelText: 'E-mail'),
             ),
@@ -66,21 +80,52 @@ class _ContactFormState extends State<ContactForm> {
               decoration: const InputDecoration(labelText: 'Subject'),
             ),
             const SizedBox(height: 12),
-            TextField(
+            TextFormField(
               controller: _messageController,
               maxLines: 5,
+              validator: (value) =>
+                  value!.trim().isEmpty ? "Please enter your message" : null,
               style: AppStyles.s14,
               decoration: const InputDecoration(
                 labelText: 'Type a message here...',
               ),
             ),
             const SizedBox(height: 16),
-            CustomButton(
-              label: 'Submit',
-              onPressed: () {},
-              backgroundColor: AppColors.primaryColor,
-              width: _getFormWidth(context.width),
-            ),
+            ValueListenableBuilder(
+                valueListenable: isLoadingNotifier,
+                builder: (context, isloading, _) {
+                  return CustomButton(
+                    label: 'Submit',
+                    onPressed: () async {
+                      try {
+                        if (!_formKey.currentState!.validate()) return;
+                        isLoadingNotifier.value = true;
+                        await ContactRepository().sendEmail(UserMailInfo(
+                            email: _emailController.text,
+                            name: _nameController.text,
+                            message: _messageController.text,
+                            subject: _subjectController.text));
+                        if (!mounted) return;
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text("Thank you for Contacting...")));
+                      } catch (e) {
+                        log(e.toString());
+                        if (mounted) return;
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: const Text(
+                              "Failed to submit, Please try Again..."),
+                          backgroundColor: AppColors.primaryColor,
+                        ));
+                      } finally {
+                        isLoadingNotifier.value = false;
+                      }
+                    },
+                    backgroundColor: AppColors.primaryColor,
+                    width: _getFormWidth(context.width),
+                    child: isloading ? const CircularProgressIndicator() : null,
+                  );
+                }),
           ],
         ),
       ),

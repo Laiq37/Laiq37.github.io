@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio/core/utils/app_strings.dart';
 import 'package:universal_html/html.dart' as html;
 
 import '../../../../core/utils/app_colors.dart';
@@ -17,10 +19,6 @@ class SocialMediaIcons extends StatelessWidget {
           link: SocialLinks.facebook,
         ),
         SocialMediaIconBtn(
-          icon: FontAwesomeIcons.instagram,
-          link: SocialLinks.instagram,
-        ),
-        SocialMediaIconBtn(
           icon: FontAwesomeIcons.linkedinIn,
           link: SocialLinks.linkedin,
         ),
@@ -28,14 +26,19 @@ class SocialMediaIcons extends StatelessWidget {
           icon: FontAwesomeIcons.twitter,
           link: SocialLinks.twitter,
         ),
+        SocialMediaIconBtn(
+          svg: AppStrings.upwork,
+          link: SocialLinks.upwork,
+        ),
       ],
     );
   }
 }
 
 class SocialMediaIconBtn extends StatelessWidget {
-  const SocialMediaIconBtn({super.key, required this.icon, this.link});
-  final IconData icon;
+  const SocialMediaIconBtn({super.key, this.svg, this.icon, this.link});
+  final IconData? icon;
+  final String? svg;
   final String? link;
 
   @override
@@ -48,11 +51,16 @@ class SocialMediaIconBtn extends StatelessWidget {
       onPressed: () {
         html.window.open(link!, '_blank');
       },
-      child: Icon(
-        icon,
-        color: AppColors.primaryColor,
-        size: 32,
-      ),
+      child: svg != null
+          ? SvgPicture.string(svg!,
+              height: 32,
+              colorFilter:
+                  ColorFilter.mode(AppColors.primaryColor, BlendMode.srcIn))
+          : Icon(
+              icon,
+              color: AppColors.primaryColor,
+              size: 32,
+            ),
     );
   }
 }

@@ -4,7 +4,7 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_extensions.dart';
 import '../../../../core/widgets/custom_divider.dart';
 import 'about_me_intro.dart';
-import 'basic_services_grid.dart';
+// import 'basic_services_grid.dart';
 import 'detailed_services_section.dart';
 import 'experience_info.dart';
 
@@ -30,8 +30,8 @@ class AboutMeSection extends StatelessWidget {
           const SizedBox(height: 8),
           const ExperienceInfo(),
           const SizedBox(height: 58),
-          const BasicServicesGrid(),
-          const SizedBox(height: 80),
+          // const BasicServicesGrid(),
+          // const SizedBox(height: 80),
           const DetailedServicesSection(),
         ],
       ),

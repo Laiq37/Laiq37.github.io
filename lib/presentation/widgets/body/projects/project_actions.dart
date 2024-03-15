@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/data/models/project.dart';
+import 'package:portfolio/presentation/views/project_mockup_preview_view.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/custom_button.dart';
@@ -23,7 +24,11 @@ class ProjectActions extends StatelessWidget {
                 label: 'Preview',
                 backgroundColor: AppColors.primaryColor,
                 onPressed: () {
-                  html.window.open(project.previewLink!, '_blank');
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ProjectMockupPreviewView(
+                              imgUrl: project.previewLink!)));
                 },
               ),
             ),
@@ -52,16 +57,6 @@ class ProjectActions extends StatelessWidget {
               ),
             ),
           ],
-          if (project.previewLink == null &&
-              project.githubRepoLink == null &&
-              project.googlePlay == null)
-            Expanded(
-              child: CustomButton(
-                label: 'No actions available',
-                borderColor: AppColors.primaryColor,
-                onPressed: () {},
-              ),
-            )
         ],
       ),
     );

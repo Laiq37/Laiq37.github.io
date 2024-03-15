@@ -9,13 +9,13 @@ abstract class AppConstants {
       service: 'MOBILE DEVELOPMENT',
       logo: AppAssets.androidLogo,
       description:
-          'I am a Junior mobile developer. I have experience using Dart and Flutter Framework.',
+          'Experienced Flutter Mobile App Developer skilled in API integration, Google Maps, and Firebase. Expert in state management (Provider, Riverpod, Get) and local storage (SQL, Hive, SharedPreferences). Let\'s build your app together!',
     ),
     CustomService(
-      service: 'UI & UX DESIGNING',
-      logo: AppAssets.uiDesignLogo,
+      service: 'Backend Development',
+      logo: AppAssets.backendLogo,
       description:
-          'I design beautiful web interfaces with Figma and Adobe XD. I design beautiful web interfaces with Figma and Adobe XD.',
+          'I collaborate with an experienced team of backend developers to ensure quality work and timely project completion, guaranteeing seamless integration and functionality for projects..',
     ),
     CustomService(
       service: 'WEB SCRAPING',
@@ -26,79 +26,51 @@ abstract class AppConstants {
   ];
   static const List<Project> projects = [
     Project(
-      name: 'Live score',
-      imageUrl:
-          'https://drive.google.com/uc?id=1ITN6reINiIaM-6j3QqxrwtvADZgLNvwB',
+      name: 'Football Universe',
+      imageUrl: AppAssets.footballUniverseLogo,
       description:
-          'A football application to display all related matches and rankings in all international and local tournaments',
-      githubRepoLink: 'https://github.com/radyhaggag/live_score',
-      previewLink: 'https://youtu.be/HSIosFd6Sys',
+          'An Application stay updated with the latest sports news, fixtures, and scores. Explore past, current, and upcoming events with ease.',
+      githubRepoLink: "https://github.com/Laiq37/football_universe",
+      previewLink: AppAssets.footballUniverseAppMockuo,
     ),
     Project(
-      name: 'Instagram clone',
-      imageUrl:
-          'https://drive.google.com/uc?id=1qNFCNYdUo7o36ythQtjaSrv7L0NV_Vnv',
+      name: 'Mahsa',
+      imageUrl: AppAssets.mahsaLogo,
       description:
-          'Social media application for share posts and stories with people, One-to-one chat, Share reels videos',
-      githubRepoLink:
-          'https://github.com/radyhaggag/Instagram-Clone-With-Clean-Architecture',
-      previewLink: 'https://youtu.be/MuuVjqrR49g',
+          'An app to Facilitate group communication with chat and post rooms. Exchange text, voice, video, and gif messages.',
+      githubRepoLink: 'https://github.com/Laiq37/mahsa_chat',
+      previewLink: AppAssets.mahsaAppMockup,
     ),
     Project(
-      name: 'TikTok Downloader',
-      imageUrl:
-          'https://drive.google.com/uc?id=1SypuIPVdokg0O4DYoYdswRowlIJAGgIq',
+      name: 'Quran App',
+      imageUrl: AppAssets.quranAppLogo,
       description:
-          'An application for download videos from tiktok and save it to gallery.',
-      githubRepoLink: 'https://github.com/radyhaggag/tiktok_downloader',
-      previewLink: 'https://youtu.be/mWeA625pcrI',
+          'An application to Access the Quran in English and Tamil translations. Share verses easily and enjoy a seamless reading experience with localization support.',
+      githubRepoLink: 'https://github.com/Laiq37/Quran_app',
+      previewLink: AppAssets.quranAppMockup,
     ),
     Project(
-      name: 'Bookly',
-      imageUrl:
-          'https://drive.google.com/uc?id=1yQtoq-wjVejWPXRI7gzGMXPUZrRob8kY',
-      description: 'An application to explore books and view their details.',
-      githubRepoLink:
-          'https://github.com/radyhaggag/bookly_app_with_mvvm_and_bloc',
-      previewLink: 'https://youtu.be/3nU_dYjsPsg',
+      name: 'E-thread',
+      imageUrl: AppAssets.ethreadLogo,
+      description:
+          'An application which simplifies the daily tasks of waste collection companies and individuals.',
+      githubRepoLink: "https://github.com/Laiq37/ethread",
+      previewLink: AppAssets.ethreadAppMockup,
     ),
     Project(
-      name: 'Image processing',
-      imageUrl:
-          'https://drive.google.com/uc?id=1hd7U3HgoDqXEi9eDKYjrY9iqlWa6qt8E',
+      name: 'Nutriwest',
+      imageUrl: AppAssets.nutriwestLogo,
       description:
-          'An Desktop program for process images and apply some filters to them.',
-      githubRepoLink:
-          'https://github.com/radyhaggag/image_processing_program_with_python_flet',
-      previewLink: 'https://youtu.be/s1KFdBKNFig',
+          'An application simplify supplement shopping with Nutriwest\'s app, catering to customers and distributors alike. Customers can browse and purchase products, while distributors gain access to exclusive updates on Nutriwest group events such as webinars and seminars.',
+      previewLink: AppAssets.nutriwestAppMockup,
     ),
     Project(
-      name: 'Salat al janazah',
-      imageUrl:
-          'https://drive.google.com/uc?id=1UpCGckOS46GdTuHU4wuj7Abo_97gxe_E',
-      description:
-          'An application for add janazah prayer and view the prayers for nearby people',
-      googlePlay:
-          'https://play.google.com/store/apps/details?id=com.SJY.salataljanaza',
-      previewLink: 'https://youtu.be/wK9Y9BhP190',
-    ),
-    Project(
-      name: 'Ghaslah',
-      imageUrl:
-          'https://drive.google.com/uc?id=1ed4H2-cH6yk_kVkDdxOLcUkgP1xpuo72',
-      description:
-          'An application for add wash cars reservation with location in map and the picker will come to wash the cars',
-      previewLink: 'https://youtu.be/gkeRSAfCZaI',
-    ),
-    Project(
-      name: 'Zawilan',
-      imageUrl:
-          'https://drive.google.com/uc?id=1ElTwguynMLqhS295-IE7bTTabsZGZp8s',
-      description:
-          'Zwailan is an education app based on units and sections system, you start by sign up on app and wait until the teacher accept your join request.',
-      previewLink: 'https://youtu.be/g92W-SmfkKc',
-      googlePlay:
-          'https://play.google.com/store/apps/details?id=com.radyhaggag.zawilan',
-    ),
+        name: 'Blink-POS',
+        imageUrl: AppAssets.blinkLogo,
+        description:
+            "A comprehensive POS solution tailored for restaurants, Blink-Pos simplifies order management and financial tracking. Restaurant managers can initiate their shifts by inputting starting drawer balances, then efficiently process orders throughout their shift."
+        // 'An application to Manage restaurant orders seamlessly. Track shifts effortlessly with automated drawer balance calculation for enhanced accountability.',
+        // previewLink: AppAssets.blinkPosMockup,
+        ),
   ];
 }

@@ -1,7 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../core/utils/app_colors.dart';
+import 'package:portfolio/core/utils/app_colors.dart';
 
 class ProjectImage extends StatelessWidget {
   const ProjectImage({super.key, required this.imageUrl});
@@ -12,17 +10,20 @@ class ProjectImage extends StatelessWidget {
     return Flexible(
       flex: 2,
       fit: FlexFit.tight,
-      child: CachedNetworkImage(
-        imageUrl: imageUrl,
-        width: double.infinity,
-        fit: BoxFit.cover,
-        errorWidget: (context, url, error) {
-          return Icon(
-            Icons.error,
-            color: AppColors.darkColor,
-            size: 50,
-          );
-        },
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8),
+        child: Image(
+          image: AssetImage(imageUrl),
+          width: double.infinity,
+          fit: BoxFit.cover,
+          errorBuilder: (context, error, stackTrace) => Center(
+            child: Icon(
+              Icons.error,
+              color: AppColors.darkColor,
+              size: 50,
+            ),
+          ),
+        ),
       ),
     );
   }
