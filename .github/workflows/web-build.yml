@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,13 +17,11 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.19.3'
-      
-      - name: Decode Secret-Content
+
       - run: echo "$ENV_BASE64" | base64 -d > .env
         env: 
           ENV_BASE64: ${{ secrets.ENV_BASE64 }}
 
-      - name: Get Flutter app dependencies
       - run: flutter pub get
 
       - name: Build Flutter web
