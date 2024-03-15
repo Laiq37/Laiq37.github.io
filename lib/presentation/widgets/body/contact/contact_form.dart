@@ -44,6 +44,13 @@ class _ContactFormState extends State<ContactForm> {
     super.dispose();
   }
 
+  resetControllers() {
+    _emailController.clear();
+    _messageController.clear();
+    _nameController.clear();
+    _subjectController.clear();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -60,24 +67,40 @@ class _ContactFormState extends State<ContactForm> {
                 if (value!.trim().isEmpty) return "Please Enter your name";
                 return null;
               },
-              decoration: const InputDecoration(labelText: 'Name'),
+              decoration: InputDecoration(
+                  labelText: 'Name',
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColors.primaryColor)),
+                  errorBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.red))),
             ),
             const SizedBox(height: 12),
             TextFormField(
               controller: _emailController,
               validator: (value) {
-                if (value!.trim().isEmpty || !value.isValidEmail())
+                if (value!.trim().isEmpty || !value.isValidEmail()) {
                   return "Please enter a valid email";
+                }
                 return null;
               },
               style: AppStyles.s14,
-              decoration: const InputDecoration(labelText: 'E-mail'),
+              decoration: InputDecoration(
+                  labelText: 'E-mail',
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColors.primaryColor)),
+                  errorBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.red))),
             ),
             const SizedBox(height: 12),
             TextFormField(
               controller: _subjectController,
               style: AppStyles.s14,
-              decoration: const InputDecoration(labelText: 'Subject'),
+              decoration: InputDecoration(
+                  labelText: 'Subject',
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColors.primaryColor)),
+                  errorBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.red))),
             ),
             const SizedBox(height: 12),
             TextFormField(
@@ -86,9 +109,12 @@ class _ContactFormState extends State<ContactForm> {
               validator: (value) =>
                   value!.trim().isEmpty ? "Please enter your message" : null,
               style: AppStyles.s14,
-              decoration: const InputDecoration(
-                labelText: 'Type a message here...',
-              ),
+              decoration: InputDecoration(
+                  labelText: 'Type a message here...',
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColors.primaryColor)),
+                  errorBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.red))),
             ),
             const SizedBox(height: 16),
             ValueListenableBuilder(
@@ -105,7 +131,9 @@ class _ContactFormState extends State<ContactForm> {
                             name: _nameController.text,
                             message: _messageController.text,
                             subject: _subjectController.text));
+                        resetControllers();
                         if (!mounted) return;
+
                         ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                                 content: Text("Thank you for Contacting...")));

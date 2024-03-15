@@ -7,9 +7,8 @@ class ProjectImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      flex: 2,
-      fit: FlexFit.tight,
+    return SizedBox(
+      height: 150,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(8),
         child: Image(
