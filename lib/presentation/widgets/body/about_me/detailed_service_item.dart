@@ -56,7 +56,7 @@ class _DetailedServiceItemState extends State<DetailedServiceItem> {
             ),
             if (context.width > DeviceType.mobile.getMinWidth()) ...[
               const SizedBox(height: 16),
-              Flexible(
+              Expanded(
                 child: AutoSizeText(
                   widget.service.description,
                   style: AppStyles.s17,
