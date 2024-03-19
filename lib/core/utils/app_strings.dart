@@ -2,11 +2,13 @@ abstract class AppStrings {
   static const String developerName = 'Syed Laiq Afzal';
   static const String helloIM = 'Hello, i’m';
   static const String introMsg =
-      "Flutter developer with +2 years of experience. I have completed many projects that prove my ability to provide creative and high-quality solutions.";
+      "A Flutter developer. My focus is on crafting intuitive and efficient solutions for a variety of applications. Let's explore how we can work together to bring your ideas to life.";
+  //"Flutter developer with +2 years of experience. I have completed many projects that prove my ability to provide creative and high-quality solutions.";
   // static String aboutMeMsg =
   //     "I'm a Flutter developer with a good understanding of the Flutter framework, I have experience in UI design, API integration, clean code writing and knowledge of solid principles and clean architecture. I have completed many projects that prove my ability to provide creative and high-quality solutions and finish them in an almost complete way with a great user experience without any problems facing users";
   static String aboutMeMsg =
-      "I'm a seasoned software engineer specializing in Flutter development. My expertise lies in crafting robust solutions for diverse projects including e-commerce, POS, chat, and waste management apps. Proficient in backend technologies like Node.js and Golang, I excel in API integration, Firebase, and Google Maps integration. My commitment to clean code, SOLID principles, and clean architecture ensures the delivery of high-quality solutions with exceptional user experiences. With a track record of completing projects seamlessly, I bring creativity and expertise to every endeavor.";
+      "I'm a seasoned software engineer specializing in Flutter development. My expertise lies in crafting robust solutions for diverse projects including e-commerce, POS, chat, and waste management apps. Proficient in backend technologies like Node.js and Golang, I excel in API integration, Firebase, and Google Maps integration. My commitment to clean code, SOLID principles, and clean architecture ensures the delivery of high-quality solutions with exceptional user experiences.";
+  //  With a track record of completing projects seamlessly, I bring creativity and expertise to every endeavor.";
   static const String numOfExperience = '2+';
   static const String experienceMsg =
       'Years of experience, Specialized in crafting seamless mobile apps that prioritize user experience.';
@@ -16,7 +18,7 @@ abstract class AppStrings {
       "I have completed many projects that prove my ability to provide creative and high-quality solutions and finish them in an almost complete way with a great user experience without any problems facing users.";
   static const String contactMsg =
       "For any service and work you can contact with me by sending an email or social media accounts.";
-      // "For any service and work you can contact me via following platforms";
+  // "For any service and work you can contact me via following platforms";
   static const String contactWithMe = 'Contact with me';
 
   //svgs

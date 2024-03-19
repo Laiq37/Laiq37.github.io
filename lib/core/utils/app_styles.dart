@@ -39,6 +39,11 @@ abstract class AppStyles {
     fontSize: 16,
     fontWeight: FontWeight.w600,
   );
+  static TextStyle s15 = TextStyle(
+    color: AppColors.white,
+    fontSize: 15,
+    fontWeight: FontWeight.w500,
+  );
   static TextStyle s14 = TextStyle(
     color: AppColors.white,
     fontSize: 14,

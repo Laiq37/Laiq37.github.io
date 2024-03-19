@@ -34,8 +34,21 @@ class ProjectItem extends StatelessWidget {
           Expanded(
             child: AutoSizeText(
               project.description,
-              style: AppStyles.s18,
-              minFontSize: 14,
+              style: AppStyles.s15.copyWith(fontWeight: FontWeight.w500),
+              minFontSize: 13,
+              // maxLines: 6,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            "Tech Stack:",
+            style: AppStyles.s16.copyWith(fontSize: 20),
+          ),
+          Expanded(
+            child: AutoSizeText(
+              project.techDescription,
+              style: AppStyles.s15.copyWith(fontWeight: FontWeight.w500),
+              minFontSize: 13,
               // maxLines: 6,
             ),
           ),

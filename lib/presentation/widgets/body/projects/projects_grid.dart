@@ -17,7 +17,7 @@ class ProjectsGrid extends StatelessWidget {
           crossAxisCount: _getCrossAxisCount(context.width),
           crossAxisSpacing: 16,
           mainAxisSpacing: 16,
-          mainAxisExtent: 450),
+          mainAxisExtent: _getMainAxisExtent(context.width)),
       itemBuilder: (context, index) {
         return ProjectItem(
           project: AppConstants.projects[index],
@@ -27,14 +27,25 @@ class ProjectsGrid extends StatelessWidget {
     );
   }
 
+  double _getMainAxisExtent(double deviceWidth) {
+    if (deviceWidth <
+        DeviceType.ipad.getMinWidth() +
+            (DeviceType.ipad.getMaxWidth() - DeviceType.ipad.getMinWidth())) {
+      return 550;
+    }
+    return 600;
+  }
+
   int _getCrossAxisCount(double deviceWidth) {
     int numOfServices = AppConstants.projects.length;
     if (deviceWidth < DeviceType.mobile.getMaxWidth()) {
       return 1;
-    } else if (deviceWidth < DeviceType.ipad.getMaxWidth()) {
+    } else if (deviceWidth <
+        DeviceType.ipad.getMinWidth() +
+            (DeviceType.ipad.getMaxWidth() - DeviceType.ipad.getMinWidth())) {
       return 1;
     } else if (deviceWidth < DeviceType.smallScreenLaptop.getMaxWidth()) {
-      return 3;
+      return 2;
     } else {
       return numOfServices > 3 ? 3 : numOfServices;
     }
