@@ -9,7 +9,7 @@ abstract class AppStrings {
   static String aboutMeMsg =
       "I'm a seasoned software engineer specializing in Flutter development. My expertise lies in crafting robust solutions for diverse projects including e-commerce, POS, chat, and waste management apps. Proficient in backend technologies like Node.js and Golang, I excel in API integration, Firebase, and Google Maps integration. My commitment to clean code, SOLID principles, and clean architecture ensures the delivery of high-quality solutions with exceptional user experiences.";
   //  With a track record of completing projects seamlessly, I bring creativity and expertise to every endeavor.";
-  static const String numOfExperience = '2+';
+  static const String numOfExperience = '3+';
   static const String experienceMsg =
       'Years of experience, Specialized in crafting seamless mobile apps that prioritize user experience.';
   static const String servicesIOffer = 'The services i offer:';
