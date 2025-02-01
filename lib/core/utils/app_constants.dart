@@ -26,6 +26,30 @@ abstract class AppConstants {
   ];
   static const List<Project> projects = [
     Project(
+        name: 'Blink-POS',
+        imageUrl: AppAssets.blinkLogo,
+        description:
+            "A comprehensive POS solution tailored for restaurants, Blink-Pos simplifies order management and financial tracking. Restaurant managers can initiate their shifts by inputting starting drawer balances, then efficiently process orders throughout their shift.",
+        techDescription:
+            'Utilizes Flutter for Mobile App development, flutter_secured_storage for local data storage, and dio for API handling. Adopts the MVVM architecture with Provider for state management. Currently under development for both Android and iOS.',
+        // 'Developed with Flutter, utilizing flutter_secured_storage and Dio. State management via Provider.',
+        // 'An application to Manage restaurant orders seamlessly. Track shifts effortlessly with automated drawer balance calculation for enhanced accountability.',
+        // previewLink: AppAssets.blinkPosMockup,
+        googlePlay: "https://play.google.com/store/apps/details?id=com.techworks.pos",
+        appStore: "https://apps.apple.com/us/app/blink-pos/id6445891133"
+        ),
+        Project(
+      name: 'Nutriwest',
+      imageUrl: AppAssets.nutriwestLogo,
+      description:
+          'An application simplify supplement shopping with Nutriwest\'s app, catering to customers and distributors alike. Customers can browse and purchase products, while distributors gain access to exclusive updates on Nutriwest group events such as webinars and seminars.',
+      techDescription:
+          'Developed with Flutter for Mobile App development, utilizing the MVVM architecture with GETx for state management. Offers Firebase Push Notification services and is available on both Android and iOS.',
+      googlePlay: "https://play.google.com/store/apps/details?id=com.nutriwest.app",
+      appStore: "https://apps.apple.com/us/app/nutri-west/id6476763673"
+      
+    ),
+    Project(
       name: 'Football Universe',
       imageUrl: AppAssets.footballUniverseLogo,
       description:
@@ -68,25 +92,5 @@ abstract class AppConstants {
       githubRepoLink: "https://github.com/Laiq37/ethread",
       previewLink: AppAssets.ethreadAppMockup,
     ),
-    Project(
-      name: 'Nutriwest',
-      imageUrl: AppAssets.nutriwestLogo,
-      description:
-          'An application simplify supplement shopping with Nutriwest\'s app, catering to customers and distributors alike. Customers can browse and purchase products, while distributors gain access to exclusive updates on Nutriwest group events such as webinars and seminars.',
-      techDescription:
-          'Developed with Flutter for Mobile App development, utilizing the MVVM architecture with GETx for state management. Offers Firebase Push Notification services and is available on both Android and iOS.',
-      previewLink: AppAssets.nutriwestAppMockup,
-    ),
-    Project(
-        name: 'Blink-POS',
-        imageUrl: AppAssets.blinkLogo,
-        description:
-            "A comprehensive POS solution tailored for restaurants, Blink-Pos simplifies order management and financial tracking. Restaurant managers can initiate their shifts by inputting starting drawer balances, then efficiently process orders throughout their shift.",
-        techDescription:
-            'Utilizes Flutter for Mobile App development, flutter_secured_storage for local data storage, and dio for API handling. Adopts the MVVM architecture with Provider for state management. Currently under development for both Android and iOS.'
-        // 'Developed with Flutter, utilizing flutter_secured_storage and Dio. State management via Provider.',
-        // 'An application to Manage restaurant orders seamlessly. Track shifts effortlessly with automated drawer balance calculation for enhanced accountability.',
-        // previewLink: AppAssets.blinkPosMockup,
-        ),
   ];
 }
